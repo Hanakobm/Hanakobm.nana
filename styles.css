@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap');
+
+:root {
+    --primary-glow: 0 0 20px rgba(255, 255, 255, 0.6);
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background-color: #0a0a0a;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Glow Effect */
+.text-glow {
+    text-shadow: var(--primary-glow);
+}
+
+/* Parallax Utility */
+.parallax {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+/* Marquee Animation */
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-33.3333%);
+    }
+}
+
+.animate-marquee {
+    display: flex;
+    width: max-content;
+    animation: marquee 20s linear infinite;
+}
+
+/* Dropdown Animation */
+.dropdown-menu {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-30px);
+    transition: all 0.4s ease;
+    pointer-events: none;
+    visibility: hidden;
+}
+
+/* Bridge to prevent closing */
+.group:after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    /* Bridge gap */
+}
+
+.group:hover .dropdown-menu {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+    pointer-events: auto;
+    visibility: visible;
+}
+
+/* Blink/Glow Animation */
+@keyframes blink-glow {
+
+    0%,
+    100% {
+        text-shadow: 0 0 10px rgb(155, 223, 255), 0 0 20px rgba(255, 255, 255, 0.3);
+        opacity: 1;
+    }
+
+    70% {
+        text-shadow: 0 0 25px rgb(83, 244, 255), 0 0 40px rgba(255, 255, 255, 0.6);
+        opacity: 0.8;
+    }
+}
+
+.hover-glow:hover {
+    animation: blink-glow 1s infinite;
+}
+
+/* Navbar Glassmorphism & Hover */
+.glass-nav {
+    background: rgba(10, 10, 10, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link {
+    position: relative;
+    padding-bottom: 4px;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    transition: width 0.3s ease;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Youtube Channel Hover */
+.channel-item {
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.channel-item:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.channel-img {
+    transition: transform 0.7s ease;
+}
+
+.channel-item:hover .channel-img {
+    transform: scale(1.1);
+}

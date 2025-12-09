@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HANAKO - About</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-dark': '#0a0a0a',
+                        'brand-gray': '#1a1a1a',
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-brand-dark text-white overflow-x-hidden">
+    <!-- Navbar -->
+    <nav id="navbar"
+        class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 md:px-10 py-6 text-white bg-black/90 backdrop-blur-md transition-all duration-1000 ease-in-out">
+        <div class="text-xl font-bold tracking-widest">
+            <!-- Logo or Brand Name could go here -->
+        </div>
+        <ul class="flex space-x-6 md:space-x-12 text-lg font-medium tracking-wide">
+            <li><a href="index.html" class="nav-link hover:text-gray-300 transition">Home</a></li>
+            <li class="relative group">
+                <a href="index.html#work" class="nav-link hover:text-gray-300 transition flex items-center gap-1">
+                    Work <span class="text-xs">▼</span>
+                </a>
+                <!-- Dropdown -->
+                <div
+                    class="dropdown-menu absolute left-1/2 -translate-x-1/2 top-full mt-4 bg-black/90 backdrop-blur-md border border-white/20 rounded-xl py-4 min-w-[160px] flex flex-col items-center gap-3 shadow-2xl">
+                    <a href="3Dart.html" class="hover:text-cyan-300 transition text-sm tracking-widest uppercase">3D
+                        ART</a>
+                    <a href="anim.html"
+                        class="hover:text-cyan-300 transition text-sm tracking-widest uppercase">Animation</a>
+                    <a href="illustration.html"
+                        class="hover:text-cyan-300 transition text-sm tracking-widest uppercase">Illustration</a>
+                    <a href="game.html"
+                        class="hover:text-cyan-300 transition text-sm tracking-widest uppercase">Game</a>
+                </div>
+            </li>
+            <li><a href="Shop.html" class="nav-link hover:text-gray-300 transition">Shop</a></li>
+            <li><a href="About.html" class="nav-link hover:text-gray-300 transition">About</a></li>
+        </ul>
+        <div class="hidden md:block"></div> <!--Spacer -->
+    </nav>
+
+    <!-- Content -->
+    <section class="min-h-screen flex flex-col items-center justify-center pt-24 relative overflow-hidden">
+        <div class="absolute inset-0 z-0 opacity-20">
+            <!-- Optional background image here -->
+        </div>
+        <div class="relative z-10 text-center max-w-4xl px-6">
+            <h1 class="text-4xl md:text-6xl font-bold tracking-tighter mb-8">About Me</h1>
+            <div class="bg-white/5 p-8 md:p-12 rounded-2xl border border-white/10 backdrop-blur-sm">
+                <p class="text-lg md:text-xl leading-relaxed opacity-80 mb-8">
+                    Hi, I'm Hanako. I am a passionate 3D Artist, Animator, and Illustrator.
+                    I love creating immersive worlds and bringing characters to life through visual storytelling.
+                    Explore my work and join me on my creative journey.
+                </p>
+                <div class="flex justify-center gap-6">
+                    <a href="mailto:contact@example.com"
+                        class="px-8 py-3 bg-white text-black rounded-full font-bold hover:bg-cyan-300 transition duration-300">
+                        Contact Me
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
